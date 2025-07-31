@@ -4,15 +4,29 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
+
 .neon {
-  font-size: 3rem;
-  color: #0ff;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-}
-.cursor {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  white-space: nowrap;
   animation: blink 1s steps(2, start) infinite;
 }
+
+.cursor {
+  color: var(--neon-secondary);
+}
+
 @keyframes blink {
-  to { visibility: hidden; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
