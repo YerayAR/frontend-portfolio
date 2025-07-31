@@ -1,0 +1,18 @@
+.hero {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.neon {
+  font-size: 3rem;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+.cursor {
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  to { visibility: hidden; }
+}

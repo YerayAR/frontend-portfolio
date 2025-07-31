@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #000;
+  position: sticky;
+  top: 0;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.menu a {
+  color: #0ff;
+  text-decoration: none;
+}
