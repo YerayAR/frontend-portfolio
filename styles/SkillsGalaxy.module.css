@@ -1,0 +1,179 @@
+.galaxy {
+  min-height: 100vh;
+  background: 
+    radial-gradient(ellipse at center, #1a0033 0%, #000011 70%),
+    linear-gradient(45deg, #000022 25%, transparent 25%, transparent 75%, #000022 75%);
+  background-size: 100px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  color: white;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.canvasContainer {
+  flex: 1;
+  position: relative;
+}
+
+.skillInfo {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 10;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.skillCard {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  min-width: 250px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.skillIcon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skillName {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.skillLevel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.levelBar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.levelFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease-out;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.levelText {
+  color: white;
+  font-weight: bold;
+  min-width: 40px;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Efectos de partículas de fondo */
+.galaxy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: sparkle 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-200px); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .skillInfo {
+    position: fixed;
+    top: auto;
+    bottom: 2rem;
+    right: 1rem;
+    left: 1rem;
+    transform: none;
+  }
+  
+  .skillCard {
+    padding: 1.5rem;
+    min-width: auto;
+  }
+}

@@ -1,0 +1,39 @@
+/* CURSOR PERSONALIZADO - Z-INDEX: 9999-10000 */
+.cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  scale: 0;
+  transition: opacity 0.3s ease, scale 0.3s ease;
+}
+
+.cursorDot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  scale: 0;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* Ocultar en dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .cursor,
+  .cursorDot {
+    display: none;
+  }
+}

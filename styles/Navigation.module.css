@@ -1,0 +1,157 @@
+/* NAVEGACIÓN PRINCIPAL - Z-INDEX: 1000 */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+}
+
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.navItems {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navButton:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.3);
+  color: #00ffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2);
+}
+
+.navButton.active {
+  background: rgba(0, 255, 255, 0.15);
+  border-color: #00ffff;
+  color: #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.navIcon {
+  font-size: 1.1rem;
+}
+
+.navLabel {
+  font-weight: 500;
+}
+
+/* MENÚ MÓVIL */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menuToggle span {
+  width: 25px;
+  height: 3px;
+  background: #00ffff;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 1rem;
+  }
+
+  .navItems {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .navItems.open {
+    display: flex;
+  }
+
+  .navButton {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .logoText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navContainer {
+    padding: 0.8rem;
+  }
+
+  .navLabel {
+    display: none;
+  }
+
+  .navButton {
+    padding: 0.8rem;
+    min-width: 50px;
+    justify-content: center;
+  }
+}

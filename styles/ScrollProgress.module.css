@@ -1,0 +1,23 @@
+/* BARRA DE PROGRESO - Z-INDEX: 1001 */
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  background-size: 200% 100%;
+  animation: gradientMove 3s ease-in-out infinite;
+  box-shadow: 0 0 10px currentColor;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
